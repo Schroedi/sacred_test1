@@ -1,18 +1,22 @@
 pipeline {
     agent any
+
     stages {
-        stage('Test') {
+        stage('Build') {
             steps {
+                echo 'Building..'
                 sh './run.sh'
             }
         }
-    }
-    post {
-        always {
-            //junit '**/target/*.xml'
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
         }
-        failure {
-            //mail to: team@example.com, subject: 'The Pipeline failed :('
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
         }
     }
 }
