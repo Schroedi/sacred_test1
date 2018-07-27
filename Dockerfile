@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y \
  && rm -rf /var/lib/apt/lists/*
 
 # we need a newer pip
-pip3 install --upgrade pip
+#pip3 install --upgrade pip
 
 # install software-properties-common to add repo
 # # python 3.6
